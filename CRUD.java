@@ -8,6 +8,17 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.Scanner;
 
+// mongo
+import org.bson.Document;
+import com.mongodb.MongoClient;
+import com.mongodb.MongoClientURI;
+import com.mongodb.client.FindIterable;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import org.bson.conversions.Bson;
+import java.util.concurrent.TimeUnit;
+import org.bson.Document;
+
 // Compile -- javac CRUD.java
 // Run -- java CRUD
 
@@ -41,13 +52,9 @@ class CRUD{
     public static void main(String[] args) {
 
         // database connection
-        // Mysql
+        // Mongo
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/employees", "root", "admin");
-            Statement stmt = conn.createStatement();
-            ResultSet rSet = stmt.executeQuery("select * from employees");
-            while (rSet.next()) {
+            MongoClient client =new MongoClient();
                 
             }
         } catch (Exception e) {
